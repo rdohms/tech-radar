@@ -1,5 +1,19 @@
 function init(h,w) {
-	   
+
+// var colorScale = {
+//     130: "#C5E1A5",
+//     220: "#DCEDC8",
+//     310: "#FFEBEE",
+//     400: "#FFCDD2",
+// }
+
+var colorScale = {
+    130: "rgba(129, 199, 132, .4)",
+    220: "rgba(220, 232, 117, .4)",
+    310: "rgba(255, 183, 77, .4)",
+    400: "rgba(229, 115, 115, .4)",
+}
+   
 var radar = new pv.Panel()
   .width(w)
   .height(h)
@@ -39,35 +53,38 @@ radar.add(pv.Dot)
     .textStyle("black");
 
 
+
 //quadrant lines -- vertical
 radar.add(pv.Line)
   .data([(h/2-radar_arcs[radar_arcs.length-1].r),h-(h/2-radar_arcs[radar_arcs.length-1].r)])
-  .lineWidth(1)
+  .lineWidth(3)
   .left(w/2)        
   .bottom(function(d) {return d;})       
-  .strokeStyle("#bbb");
+  .strokeStyle("#E0E0E0");
 
 //quadrant lines -- horizontal 
 radar.add(pv.Line)
   .data([(w/2-radar_arcs[radar_arcs.length-1].r),w-(w/2-radar_arcs[radar_arcs.length-1].r)])
-  .lineWidth(1)
+  .lineWidth(3)
   .bottom(h/2)
   .left(function(d) {return d;})       
-  .strokeStyle("#bbb");
+  .strokeStyle("#E0E0E0");
 
 // arcs
 radar.add(pv.Dot)
-  .data(radar_arcs)
+  .data(radar_arcs.reverse())
   .left(w/2)
   .bottom(h/2)
   .radius(function(d) { return d.r; })
-  .strokeStyle("#ccc")
+  .strokeStyle(function(d) { return colorScale[d.r]; })
+  .lineWidth(3)
+  .fillStyle(function(d) { return colorScale[d.r]; })
   .anchor("top")
   .add(pv.Label)
     .textBaseline("top")
     .textMargin(40)
     .text(function(d) { return d.name; })
-    .textStyle("#ccc")
+    .textStyle("#9E9E9E")
     .font("bold 40px sans-serif");
 
 //Quadrant Ledgends
