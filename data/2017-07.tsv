@@ -1,0 +1,9 @@
+Technology	Quadrant	Score	State	State Range	Skip	Url	Comments
+MongoDB	Data Mgt	1.5	USE	1.5 <> 2			
+Postgres	Data Mgt	0.0	RESEARCH	0 <> 1.5			
+PHP 7.*	Languages	2.0	USE	1.5 <> 2		http://www.php.net	
+PHP 5.*	Languages	-0.5	PHASE OUT	-1 <> 0			
+Prometheus	Platforms & Infrastructure	2.0	USE	1.5 <> 2			
+Symfony	Techniques; Frameworks & Tools	1.5	USE	1.5 <> 2			
+Timestamps	Techniques; Frameworks & Tools	-0.5	PHASE OUT	-1 <> 0			Using timestamps to communicate between platforms should be avoided
+RFC3339	Techniques; Frameworks & Tools	2.0	USE	1.5 <> 2			
