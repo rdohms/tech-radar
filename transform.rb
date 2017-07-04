@@ -36,10 +36,10 @@ class Layout
   end
 
   ANGLES = {
-    adopt: angles(10, 13),
-    trial: angles(8, 12), 
-    assess: angles(6, 10), 
-    hold: angles(4, 8), 
+    tier1: angles(10, 13),
+    tier2: angles(8, 12), 
+    tier3: angles(6, 10), 
+    tier4: angles(4, 8), 
   }
 
   def self.instance(quadrant, ring)
@@ -71,16 +71,16 @@ class Blip
   end
 
   def ring
-    return :adopt if score >= 1.5
-    return :trial if score >= 0
-    return :assess if score >= -1
-    return :hold
+    return :tier1 if score >= 1.5
+    return :tier2 if score >= 0
+    return :tier3 if score >= -1
+    return :tier4
   end
 
   def radius
-    return (50..ARCS[0][:r]-10).to_a.sample if ring == :adopt
-    return (ARCS[0][:r]+10..ARCS[1][:r]-10).to_a.sample if ring == :trial
-    return (ARCS[1][:r]+10..ARCS[2][:r]-10).to_a.sample if ring == :assess
+    return (50..ARCS[0][:r]-10).to_a.sample if ring == :tier1
+    return (ARCS[0][:r]+10..ARCS[1][:r]-10).to_a.sample if ring == :tier2
+    return (ARCS[1][:r]+10..ARCS[2][:r]-10).to_a.sample if ring == :tier3
     return (ARCS[2][:r]+10..ARCS[3][:r]-10).to_a.sample
   end
 
