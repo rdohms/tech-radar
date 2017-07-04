@@ -141,7 +141,7 @@ class Radar
     blips = {}
     open(path).each do |line|
       cols = line.split("\t")
-      name, quadrant, score, skip, url = cols[0], cols[1], cols[3], cols[6], cols[7]
+      name, quadrant, score, skip, url = cols[0], cols[1], cols[2], cols[5], cols[6]
       next if score == "Score"
       next if score.nil? || score.strip.empty? || skip == "FALSE"
       blip = Blip.new(name, quadrant, score.to_f, url)

@@ -1,12 +1,5 @@
 function init(h,w) {
 
-// var colorScale = {
-//     130: "#C5E1A5",
-//     220: "#DCEDC8",
-//     310: "#FFEBEE",
-//     400: "#FFCDD2",
-// }
-
 var colorScale = {
     130: "rgba(129, 199, 132, .4)",
     220: "rgba(220, 232, 117, .4)",
@@ -18,6 +11,9 @@ var radar = new pv.Panel()
   .width(w)
   .height(h)
   .canvas('radar');
+
+var arcs = radar_arcs.slice();
+arcs.reverse();
 
 // headline
 radar.add(pv.Label)
@@ -72,7 +68,7 @@ radar.add(pv.Line)
 
 // arcs
 radar.add(pv.Dot)
-  .data(radar_arcs.reverse())
+  .data(arcs)
   .left(w/2)
   .bottom(h/2)
   .radius(function(d) { return d.r; })
