@@ -13,10 +13,10 @@ end
 
 
 ARCS = [
-  { name: "ADOPT", r: 130 },
-  { name: "TRIAL", r: 220 },
-  { name: "ASSESS", r: 310 },
-  { name: "HOLD", r: 400 }
+  { name: "USE", r: 130 },
+  { name: "RESEARCH", r: 220 },
+  { name: "PHASE OUT", r: 310 },
+  { name: "AVOID", r: 400 }
 ]
 
 class Layout
@@ -140,7 +140,7 @@ class Radar
     open(path).each do |line|
       cols = line.split("\t")
       name, quadrant, score = cols[0], cols[1], cols[3]
-      raise "PLEASE DELETE HEADER LINE: #{path}" if score == "AVG"
+      next if score == "Score"
       next if score.nil? || score.strip.empty?
       blip = Blip.new(name, quadrant, score.to_f)
       blips[blip.name] = blip
