@@ -25,27 +25,27 @@ var radar_data = [
     "left" : 45,
     "top" : 188,
     "color" : "#8FA227",
-    "items" : {{ techniques }}
+    "items" : {{ techniques | default: 0 }}
   },
   { 
     "quadrant": "Data Management",
     "left": w-300+30,
     "top" : 188,
     "color" : "#587486",
-    "items" : {{ data }}
+    "items" : {{ data | default: 0 }}
   },
   {   
     "quadrant": "Platforms & Infrastructure",
     "left" :45,
     "top" : (h/2 + 38),
     "color" : "#DC6F1D",
-    "items" : {{ platforms }}
+    "items" : {{ platforms | default: 0 }}
   },
   { 
     "quadrant": "Languages",
     "color" : "#B70062",
     "left"  : (w-300+30),
     "top" :   (h/2 + 38),
-    "items" : {{ languages }}
+    "items" : {{ languages | default: 0 }}
   }
 ];
