@@ -9,26 +9,9 @@ var radar = new pv.Panel()
 radar.add(pv.Label)
   .left(40)
   .top(78)
-  .text("Zalando Tech Radar — 2017.07")
+  .text("Usabilla Tech Radar")
   .font("40px sans-serif");
 
-// contact info
-radar.add(pv.Label)
-  .top(875)
-  .right(40)
-  .textAlign("right")
-  .text("Questions? Comments? Ideas?")
-  .font("28px sans-serif")
-  .add(pv.Label)
-    .top(910)
-    .text("tech-guild-technologists@zalando.de")
-    .textStyle("blue")
-    .font("22px monospace")
-  .add(pv.Label)
-    .top(940)
-    .text("#guild-technologists")
-    .textStyle("blue")
-    .font("22px monospace");
 
 // legend
 radar.add(pv.Dot)
@@ -52,7 +35,7 @@ radar.add(pv.Dot)
   .angle(45)
   .anchor("right")
   .add(pv.Label)
-    .text("changed since last edition (2017.03)")
+    .text("changed since last edition")
     .textStyle("black");
 
 
