@@ -59,10 +59,10 @@ end
 
 
 class Blip
-  attr_reader :name, :quadrant, :score
+  attr_reader :name, :quadrant, :score, :url
 
-  def initialize(name, quadrant, score)
-    @name, @quadrant, @score = name, quadrant, score
+  def initialize(name, quadrant, score, url)
+    @name, @quadrant, @score, @url = name, quadrant, score, url
     @moved = false
   end
 
@@ -96,8 +96,10 @@ class Blip
     [ ring, name.downcase ]
   end
 
-  def as_json
-    { name: name, pc: { r: radius, t: angle }, movement: movement }
+  def as_data
+    item = { :name => name, :pc => { :r => radius, :t => angle }, :movement => movement }
+    item[:url] = url unless url.to_s.strip.empty?    
+    return item
   end
 end
 
@@ -125,7 +127,7 @@ class Radar
   def render
     snippets = @blips.values.group_by(&:quadrant).remap do |hash, key, value|
       short_key = key.scan(/\w+/).first.downcase
-      hash[short_key] = JSON.pretty_generate(value.sort_by(&:sortkey).map(&:as_json))
+      hash[short_key] = JSON.pretty_generate(value.sort_by(&:sortkey).map(&:as_data))
     end
     snippets["arcs"] = JSON.pretty_generate(ARCS)
     template = Liquid::Template.parse(open("radar_data.js.liquid").read)
@@ -139,10 +141,10 @@ class Radar
     blips = {}
     open(path).each do |line|
       cols = line.split("\t")
-      name, quadrant, score = cols[0], cols[1], cols[3]
+      name, quadrant, score, skip, url = cols[0], cols[1], cols[3], cols[6], cols[7]
       next if score == "Score"
-      next if score.nil? || score.strip.empty?
-      blip = Blip.new(name, quadrant, score.to_f)
+      next if score.nil? || score.strip.empty? || skip == "FALSE"
+      blip = Blip.new(name, quadrant, score.to_f, url)
       blips[blip.name] = blip
     end
     blips
