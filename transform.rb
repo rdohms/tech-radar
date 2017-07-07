@@ -3,7 +3,6 @@
 require "json"
 require "liquid"
 
-
 class Hash
   def remap(hash={})
     each { |k,v| yield hash, k, v }
@@ -22,10 +21,10 @@ ARCS = [
 class Layout
 
   OFFSET = {
-    "Data Mgt" => 0,
-    "Techniques; Frameworks & Tools" => 90,
+    "Tools" => 0,
+    "Languages & Frameworks" => 90,
     "Platforms & Infrastructure" => 180, 
-    "Languages" => 270,
+    "Techniques" => 270,
   }
 
   def self.angles(start, step)
@@ -125,11 +124,15 @@ class Radar
 
   # render blips as json into js template
   def render
+
     snippets = @blips.values.group_by(&:quadrant).remap do |hash, key, value|
       short_key = key.scan(/\w+/).first.downcase
       hash[short_key] = JSON.pretty_generate(value.sort_by(&:sortkey).map(&:as_data))
     end
+    
     snippets["arcs"] = JSON.pretty_generate(ARCS)
+    snippets["quadrants"] = Layout::OFFSET.keys()
+    
     template = Liquid::Template.parse(open("radar_data.js.liquid").read)
     open("radar_data.js", "w") do |out|
       out.puts template.render(snippets)
