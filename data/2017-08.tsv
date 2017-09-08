@@ -1,0 +1,51 @@
+Technology	Quadrant	Score	State	State Range	Skip	Url	Validated By Board	Comments	SDK	OZ	Mallard	Flamingo	Infra	Dev	Outcome
+MongoDB 2.6	Tools	1.5	USE	1.5 <> 2				would be good to phase out	Disagree	Disagree	Disagree	Disagree	Disagree		
+MongoDB 3.x	Tools	0.0	RESEARCH	0 <> 1.5				already being used by devenv	Agree	Agree	Agree	Agree	Agree		
+Postgres	Tools	0.0	RESEARCH	0 <> 1.5					Abstain	Agree	Abstain	Agree	Agree		
+PHP 7.*	Languages & Frameworks	2.0	USE	1.5 <> 2		http://www.php.net			Abstain	Agree	Abstain	Agree	Agree		
+PHP 5.*	Languages & Frameworks	-0.5	PHASE OUT	-1 <> 0					Agree	Agree	Abstain	Agree	Agree		
+Prometheus	Tools	2.0	USE	1.5 <> 2					Abstain	Agree	Agree	Agree	Agree		
+Symfony	Languages & Frameworks	1.5	USE	1.5 <> 2				Agree, but we should add version.	Agree	Disagree	Abstain	Abstain	Abstain		
+Timestamps	Techniques	-0.5	PHASE OUT	-1 <> 0				Using timestamps to communicate between platforms should be avoided	Agree	Agree	Agree	Agree	Agree		
+RFC3339	Techniques	2.0	USE	1.5 <> 2				No timezone other than UTC	Agree	Agree	Agree	Agree	Agree		
+Go	Languages & Frameworks	2.0	USE	1.5 <> 2					Agree	Agree	Agree	Agree	Agree		
+Typescript	Languages & Frameworks	2.0	USE	1.5 <> 2		http://www.typescriptlang.org/			Agree	Abstain	Agree	Agree	Agree		
+ReactJS	Languages & Frameworks	2.0	USE	1.5 <> 2		https://facebook.github.io/react/			Agree	Agree	Agree	Agree	Agree		
+Angular 1	Languages & Frameworks	-1.0	PHASE OUT	-1 <> 0		https://angularjs.org/			Agree	Agree	Agree	Agree	Agree		
+Javascript ES5	Languages & Frameworks	0.0	PHASE OUT	-1 <> 0				Currenty everything is transpiled to ES5, but there is code written in ES5 for usabilla.js legacy project	Agree	Abstain	Agree	Agree	Agree		
+Javascript (stage 2+)	Languages & Frameworks	2.0	USE	1.5 <> 2		http://2ality.com/2015/11/tc39-process.html		We use the latest version of Javascript with features from stage 2 and up	Abstain	Abstain	Agree	Agree			
+Ansible	Tools	2.0	USE	1.5 <> 2		https://www.ansible.com/		For all infrastructure except AWS resources, use AWS Cloudformation for that	Abstain	Agree	Abstain	Abstain	Agree		
+AWS	Platforms & Infrastructure	2.0	USE	1.5 <> 2		https://aws.amazon.com/			Agree	Agree	Agree	Agree	Agree		
+Swift 3.1	Languages & Frameworks	2.0	USE	1.5 <> 2		https://swift.org/blog/swift-3-1-released/		Latest stable release of Swift (used in our SDK)	Agree	Abstain	Abstain	Abstain	Abstain		
+Swift 3.2	Languages & Frameworks	2.0	USE	1.5 <> 2				Still in development but in use to allow developers that are using the latest XCode to use our sdk	Agree	Abstain	Abstain	Abstain	Abstain		
+Swift 4.0	Languages & Frameworks	1.5	RESEARCH	0 <> 1.5				Should be stable around September 2017 and therefore integrated with our SDK	Agree	Abstain	Abstain	Abstain	Abstain		
+Objective-c	Languages & Frameworks	-2.0	AVOID	-2 <> -1					Agree	Agree	Agree	Agree	Abstain		
+iOS 8	Platforms & Infrastructure	0.0	RESEARCH	0 <> 1.5				We might start investigation/support if customers request it	Abstain		Abstain	Abstain	Abstain		
+iOS 9	Platforms & Infrastructure	2.0	USE	1.5 <> 2					Agree		Abstain	Abstain	Abstain		
+iOS 10	Platforms & Infrastructure	2.0	USE	1.5 <> 2					Agree		Abstain	Abstain	Abstain		
+iOS 11	Platforms & Infrastructure	0.0	RESEARCH	0 <> 1.5					Agree		Abstain	Abstain	Abstain		
+Java 7	Languages & Frameworks	2.0	USE	1.5 <> 2					Agree		Abstain	Abstain	Abstain		
+Kotlin 1.1	Languages & Frameworks	2.0	USE	1.5 <> 2					Agree		Abstain	Abstain	Abstain		
+Android API 16 -> 25	Languages & Frameworks	2.0	USE	1.5 <> 2					Agree		Abstain	Abstain	Abstain		
+Android 4.1 -> 7.1	Platforms & Infrastructure	2.0	USE	1.5 <> 2					Agree		Abstain	Abstain	Abstain		
+Elasticsearch 1.5	Tools	2.0	USE	1.5 <> 2					Abstain		Agree	Agree	Abstain		
+Elasticsearch 5.x+	Tools	0.0	RESEARCH	0 <> 1.5					Abstain		Agree	Agree	Agree		
+Hashicorp Vault	Tools	0.5	RESEARCH	0 <> 1.5					Abstain		Abstain	Abstain	Agree		
+Groovy	Languages & Frameworks	2.0	USE	1.5 <> 2				Only for Jenkins and Android gradle files	Agree		Abstain	Agree	Agree		
+Jenkins	Tools	2.0	USE	1.5 <> 2					Agree		Agree	Agree	Agree		
+jQuery	Languages & Frameworks	-1.0	PHASE OUT	-1 <> 0					Agree		Agree	Agree	Agree		
+Coffeescript	Languages & Frameworks	-1.0	PHASE OUT	-1 <> 0					Agree		Agree	Agree	Agree		
+KnockoutJS	Languages & Frameworks	-1.0	PHASE OUT	-1 <> 0					Abstain		Agree	Agree	Agree		
+Python 2.x	Languages & Frameworks	2.0	USE	1.5 <> 2				Used for Ops only	Abstain		Abstain	Abstain	Agree		
+Ruby	Languages & Frameworks	-2.0	AVOID	-2 <> -1					Agree		Abstain	Abstain	Agree		
+Docker	Tools	2.0	USE	1.5 <> 2					Agree		Agree	Agree	Agree		
+Kubernetes	Platforms & Infrastructure	0.0	RESEARCH	0 <> 1.5					Abstain		Agree	Agree	Agree		
+Grafana	Tools	2.0	USE	1.5 <> 2					Abstain		Abstain	Abstain	Agree		
+Concerto	Tools	2.0	USE	1.5 <> 2					Abstain		Abstain	Abstain	Agree		
+FreeIPA	Tools	2.0	USE	1.5 <> 2					Abstain		Abstain	Abstain	Agree		
+InfluxDB	Tools	1.5	USE	1.5 <> 2					Abstain		Abstain	Abstain	Agree		
+LESS	Languages & Frameworks	-0.5	PHASE OUT	-1 <> 0					Agree		Agree	Agree	Agree		
+SCSS	Languages & Frameworks	2.0	USE	1.5 <> 2					Agree		Agree	Agree	Agree		
+Node 7	Languages & Frameworks	2.0	USE	1.5 <> 2					Agree		Agree	Agree	Agree		
+Node 8	Languages & Frameworks	2.0	USE	1.5 <> 2					Abstain		Agree	Agree	Agree		
+Kafka	Platforms & Infrastructure														

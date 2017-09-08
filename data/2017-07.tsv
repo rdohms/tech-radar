@@ -1,9 +1,45 @@
-Technology	Quadrant	Score	State	State Range	Skip	Url	Comments
-MongoDB	Data Mgt	1.5	USE	1.5 <> 2			
-Postgres	Data Mgt	0.0	RESEARCH	0 <> 1.5			
-PHP 7.*	Languages	2.0	USE	1.5 <> 2		http://www.php.net	
-PHP 5.*	Languages	-0.5	PHASE OUT	-1 <> 0			
-Prometheus	Platforms & Infrastructure	2.0	USE	1.5 <> 2			
-Symfony	Techniques; Frameworks & Tools	1.5	USE	1.5 <> 2			
-Timestamps	Techniques; Frameworks & Tools	-0.5	PHASE OUT	-1 <> 0			Using timestamps to communicate between platforms should be avoided
-RFC3339	Techniques; Frameworks & Tools	2.0	USE	1.5 <> 2			
+Technology	Quadrant	Score	State	State Range	Skip	Url	Validated By Board	Comments
+MongoDB 2.6	Tools	1.5	USE	1.5 <> 2				
+MongoDB 3.x	Tools	0.0	RESEARCH	0 <> 1.5				already being used by devenv
+Postgres	Tools	0.0	RESEARCH	0 <> 1.5				
+PHP 7.*	Languages & Frameworks	2.0	USE	1.5 <> 2		http://www.php.net		
+PHP 5.*	Languages & Frameworks	-0.5	PHASE OUT	-1 <> 0				
+Prometheus	Tools	2.0	USE	1.5 <> 2				
+Symfony	Languages & Frameworks	1.5	USE	1.5 <> 2				
+Timestamps	Techniques	-0.5	PHASE OUT	-1 <> 0				Using timestamps to communicate between platforms should be avoided
+RFC3339	Techniques	2.0	USE	1.5 <> 2				No timezone other than UTC
+Go	Languages & Frameworks	2.0	USE	1.5 <> 2				
+Typescript	Languages & Frameworks	2.0	USE	1.5 <> 2		http://www.typescriptlang.org/		
+ReactJS	Languages & Frameworks	2.0	USE	1.5 <> 2		https://facebook.github.io/react/		
+Angular 1	Languages & Frameworks	-1.0	PHASE OUT	-1 <> 0		https://angularjs.org/		
+Javascript	Languages & Frameworks	2.0	USE	1.5 <> 2				
+Ansible	Tools	2.0	USE	1.5 <> 2		https://www.ansible.com/		For all infrastructure except AWS resources, use AWS Cloudformation for that
+AWS	Platforms & Infrastructure	2.0	USE	1.5 <> 2		https://aws.amazon.com/		
+Swift 3.1	Languages & Frameworks	2.0	USE	1.5 <> 2		https://swift.org/blog/swift-3-1-released/		Latest stable release of Swift (used in our SDK)
+Swift 3.2	Languages & Frameworks	2.0	USE	1.5 <> 2				Still in development but in use to allow developers that are using the latest XCode to use our sdk
+Swift 4.0	Languages & Frameworks	1.5	RESEARCH	0 <> 1.5				Should be stable around September 2017 and therefore integrated with our SDK
+Objective-c	Languages & Frameworks	-2.0	AVOID	-2 <> -1				
+iOS 8	Platforms & Infrastructure	0.0	RESEARCH	0 <> 1.5				We might start investigation/support if customers request it
+iOS 9	Platforms & Infrastructure	2.0	USE	1.5 <> 2				
+iOS 10	Platforms & Infrastructure	2.0	USE	1.5 <> 2				
+iOS 11	Platforms & Infrastructure	0.0	RESEARCH	0 <> 1.5				
+Java 7	Languages & Frameworks	2.0	USE	1.5 <> 2				
+Kotlin 1.1	Languages & Frameworks	2.0	USE	1.5 <> 2				
+Android API 16 -> 25	Languages & Frameworks	2.0	USE	1.5 <> 2				
+Android 4.1 -> 7.1	Platforms & Infrastructure	2.0	USE	1.5 <> 2				
+Elasticsearch 1.5	Tools	2.0	USE	1.5 <> 2				
+Elasticsearch 5.x+	Tools	0.0	RESEARCH	0 <> 1.5				
+Hashicorp Vault	Tools	0.5	RESEARCH	0 <> 1.5				
+Groovy	Languages & Frameworks	2.0	USE	1.5 <> 2				Only for Jenkins
+Jenkins	Tools	2.0	USE	1.5 <> 2				
+jQuery	Languages & Frameworks	-1.0	PHASE OUT	-1 <> 0				
+Coffeescript	Languages & Frameworks	-1.0	PHASE OUT	-1 <> 0				
+KnockoutJS	Languages & Frameworks	-1.0	PHASE OUT	-1 <> 0				
+Python 2.x	Languages & Frameworks	2.0	USE	1.5 <> 2				Used for Ops only
+Ruby	Languages & Frameworks	-2.0	AVOID	-2 <> -1				
+Docker	Tools	2.0	USE	1.5 <> 2				
+Kubernetes	Platforms & Infrastructure	0.0	RESEARCH	0 <> 1.5				
+Grafana	Tools	2.0	USE	1.5 <> 2				
+Concerto	Tools	2.0	USE	1.5 <> 2				
+FreeIPA	Tools	2.0	USE	1.5 <> 2				
+InfluxDB	Tools	1.5	USE	1.5 <> 2				
