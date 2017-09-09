@@ -23,7 +23,7 @@ class Layout
   OFFSET = {
     "Tools" => 0,
     "Languages & Frameworks" => 90,
-    "Platforms & Infrastructure" => 180, 
+    "Platforms & Infrastructure" => 180,
     "Techniques" => 270,
   }
 
@@ -36,9 +36,9 @@ class Layout
 
   ANGLES = {
     tier1: angles(10, 13),
-    tier2: angles(8, 12), 
-    tier3: angles(6, 10), 
-    tier4: angles(4, 8), 
+    tier2: angles(8, 12),
+    tier3: angles(6, 10),
+    tier4: angles(4, 8),
   }
 
   def self.instance(quadrant, ring)
@@ -97,7 +97,7 @@ class Blip
 
   def as_data
     item = { :name => name, :pc => { :r => radius, :t => angle }, :movement => movement }
-    item[:url] = url unless url.to_s.strip.empty?    
+    item[:url] = url unless url.to_s.strip.empty?
     return item
   end
 end
@@ -129,12 +129,12 @@ class Radar
       short_key = key.scan(/\w+/).first.downcase
       hash[short_key] = JSON.pretty_generate(value.sort_by(&:sortkey).map(&:as_data))
     end
-    
+
     snippets["arcs"] = JSON.pretty_generate(ARCS)
     snippets["quadrants"] = Layout::OFFSET.keys()
-    
-    template = Liquid::Template.parse(open("radar_data.js.liquid").read)
-    open("radar_data.js", "w") do |out|
+
+    template = Liquid::Template.parse(open(__dir__ + "/radar_data.js.liquid").read)
+    open(__dir__ + "/../generated/radar_data.js", "w") do |out|
       out.puts template.render(snippets)
     end
   end
@@ -154,9 +154,8 @@ class Radar
   end
 end
 
-files = Dir["data/*.tsv"]
+files = Dir[__dir__ + "/../data/*.tsv"]
 radar = Radar.new(files.pop)
 previous = files.pop
 radar.track_moves(Radar.new(previous)) if previous
 radar.render
-
